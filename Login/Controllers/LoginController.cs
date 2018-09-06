@@ -20,7 +20,7 @@ namespace Login.Controllers
                 .Where(IsMember)
                 .DefaultIfEmpty(DefaultMember())
                 .Select(Result)
-                .FirstOrDefault();
+                .First();
 
             bool IsMember(Member x)
                 => x.Username == member.Username && x.Password == member.Password;
